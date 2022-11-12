@@ -44,7 +44,8 @@ DJANGO_APP = [
 ]
 LOCAL_APP = [
     # Installed apps to config template
-    "app.apps.AppConfig"
+    "app.apps.AppConfig",
+    "subscribe.apps.SubscribeConfig"
 ]
 
 INSTALLED_APPS = DJANGO_APP + LOCAL_APP
