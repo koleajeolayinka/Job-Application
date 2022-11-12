@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    {{form}}
+    {% comment %} <form method="Post">
+      {% csrf_token %}
+       {% if email_error_empty %}
+      <p>{{ email_error_empty }}</p>
+      {% endif %}
+      <label for="f_name">First Name</label>
+      <input
+        type="text"
+        id="f_name"
+        name="firstname"
+        placeholder="Your First Name"
+      />
+      <br />
+      <label for="l_name">Last Name</label>
+      <input
+        type="text"
+        id="l_name"
+        name="lastname"
+        placeholder="Your last Name"
+      />
+      <br />
+      <label for="email">Email</label>
+      <input type="Email" id="email" name="email" placeholder="Your Email" />
+
+      <br />
+
+      <input type="submit" value="Submit" />
+    </form> {% endcomment %}
+  </body>
+</html>
