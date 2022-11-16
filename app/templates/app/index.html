@@ -7,20 +7,21 @@
     <title>Document</title>
 </head>
 <body>
+
 <ul>
-        
+
     {% for job in job_title %}
     <li>
         <a href="{% url 'jobs_detail' forloop.counter0 %}">
 
     <h1>{{job}}</h1>
-    
+
     </li>
-    
+
     </a>
 
     {% endfor %}
-      
+
 </ul>
 </body>
 </html>
