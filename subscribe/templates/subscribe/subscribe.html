@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -7,13 +8,15 @@
       content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
     />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static  'main.css' %}" />
+    <title>Subscribe</title>
   </head>
   <body>
-    {{form}}
-    {% comment %} <form method="Post">
-      {% csrf_token %}
-       {% if email_error_empty %}
+    <h1>Subscribe Form</h1>
+    <form method="post">
+      {% csrf_token %} {{ form.as_div }}
+      <input type="submit" value="Submit" />
+      {% comment %} {% csrf_token %} {% if email_error_empty %}
       <p>{{ email_error_empty }}</p>
       {% endif %}
       <label for="f_name">First Name</label>
@@ -38,6 +41,7 @@
       <br />
 
       <input type="submit" value="Submit" />
-    </form> {% endcomment %}
+      {% endcomment %}
+    </form>
   </body>
 </html>
