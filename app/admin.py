@@ -1,5 +1,5 @@
 from django.contrib import admin
-from app.models import JobPost, Location, Author, Skills
+from app.models import JobPost, Location, Author, Skill
 
 
 class JobAdmin(admin.ModelAdmin):
@@ -11,14 +11,25 @@ class JobAdmin(admin.ModelAdmin):
     # exclude= ("title",)
     fieldsets = (
         (
-            "Basic Information", {'fields':("title", "description",)
-        }),
-        ("More Information", 
-        {
-        "classes": ("collapse",),
-
-        "fields":("expire", "salary", "url",)
-        }),
+            "Basic Information",
+            {
+                "fields": (
+                    "title",
+                    "description",
+                )
+            },
+        ),
+        (
+            "More Information",
+            {
+                "classes": ("collapse",),
+                "fields": (
+                    "expire",
+                    "salary",
+                    "url",
+                ),
+            },
+        ),
     )
 
 
@@ -26,4 +37,4 @@ class JobAdmin(admin.ModelAdmin):
 admin.site.register(JobPost)
 admin.site.register(Location)
 admin.site.register(Author)
-admin.site.register(Skills)
+admin.site.register(Skill)
