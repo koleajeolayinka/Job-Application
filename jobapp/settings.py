@@ -47,7 +47,7 @@ LOCAL_APP = [
     "app.apps.AppConfig",
     "subscribe.apps.SubscribeConfig",
     "uploadapp.apps.UploadappConfig",
-    "applybank.apps.ApplyforjobConfig"
+    "applymode.apps.ApplyforjobConfig"
 ]
 
 INSTALLED_APPS = DJANGO_APP + LOCAL_APP
@@ -133,6 +133,7 @@ STATIC_URL = "static/"
 ##MEDIA ROOT
 
 MEDIA_ROOT = BASE_DIR / 'uploads/'
+MEDIA_URL = '/media/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
