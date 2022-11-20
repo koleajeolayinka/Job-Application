@@ -8,7 +8,7 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ("applybank", "0002_remove_apply_job_id"),
+        ("applymode", "0002_remove_apply_job_id"),
         ("app", "0016_remove_jobpost_apply_delete_apply"),
     ]
 
@@ -19,7 +19,7 @@ class Migration(migrations.Migration):
             field=models.ForeignKey(
                 null=True,
                 on_delete=django.db.models.deletion.CASCADE,
-                to="applybank.apply",
+                to="applymode.apply",
             ),
         ),
         migrations.AlterField(
