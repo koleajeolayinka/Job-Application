@@ -1,5 +1,7 @@
 from django.db import models
 from django.utils.text import slugify
+# from ckeditor.fields import RichTextField
+# from applybank.models import Apply
 
 
 # Create your models here.
@@ -32,6 +34,8 @@ class JobPost(models.Model):
     location = models.OneToOneField(Location, on_delete=models.CASCADE, null=True)
     author = models.ForeignKey(Author, on_delete=models.CASCADE, null=True)
     skills = models.ManyToManyField(Skill)
+
+    apply = models.ForeignKey('applybank.ApplyForm', null=True, on_delete=models.CASCADE)
 
     # auth
 
