@@ -35,11 +35,12 @@ class JobPost(models.Model):
     author = models.ForeignKey(Author, on_delete=models.CASCADE, null=True)
     skills = models.ManyToManyField(Skill)
 
-    apply = models.ForeignKey('applymode.ApplyForm', null=True, on_delete=models.CASCADE)
+    # apply = models.ManyToManyField('applymode.ApplyForm', null=True, on_delete=models.CASCADE)
 
     # auth
 
     def save(self, *args, **kwargs):
+        print(self.id)
         if not self.id:
             self.url = slugify(self.title)
         return super(JobPost, self).save(*args, **kwargs)

@@ -1,4 +1,3 @@
-from multiprocessing import context
 from django.shortcuts import render
 from django.http import Http404, HttpResponse, HttpResponseNotFound
 from django.shortcuts import redirect
@@ -20,6 +19,7 @@ job_description = [
 
 job = JobPost.objects.all()
 
+
 def hello(request):
     # template = loader.get_template('app/hello.html')
     temp = test_clas()
@@ -35,7 +35,7 @@ def hello(request):
         "item": list_item,
         "num": temp,
         "user": age,
-        "name": name1,
+        # "name": name1,
         "mark": if_authenticated,
     }
     # return HttpResponse(template.render(context, request))
@@ -48,8 +48,8 @@ def job_list(request):
     # detail_url = reverse("jobs_detail", args=(job_id,))
 
     context = {
-            "job_title": job,
-        }
+        "job_title": job,
+    }
 
     #     list_of_jobs = list_of_jobs + f"<a href='{detail_url}'><li>{i}</li></a>"
     # list_of_jobs = list_of_jobs + "</ul>"
@@ -59,7 +59,7 @@ def job_list(request):
 
 
 def job_detail(request, id):
-    job
+    # job
 
     try:
         if id == 0:
@@ -67,9 +67,10 @@ def job_detail(request, id):
         context = {
             "job_title": job[id],
             "job_descrpt": job[id],
-            "salary": job[id ]
+            "salary": job[id]
         }
-        # return_html = f"<h1>{job_title[int(id)]}</h1> <h3>{job_description[int(id)]}</h3> <a href={back}><h1>back</h1></a>"
+        # return_html = f"<h1>{job_title[int(id)]}</h1> <h3>{job_description[int(id)]}</h3> <a href={
+        # back}><h1>back</h1></a>"
 
         return render(request, "app/jobdetail.html", context)
     except:
