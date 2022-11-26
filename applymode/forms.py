@@ -1,5 +1,5 @@
 from django import forms
-from applybank.models import ApplyForm
+from applymode.models import ApplyForm
 from django.utils.translation import gettext_lazy as _
 
 

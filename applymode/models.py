@@ -5,6 +5,10 @@ from django.db import models
 
 # Create your models here.
 
+# class apply(models.Model):
+#     jobPostId =  models.
+
+
 gender = [('Male', 'Male'), ('Female', 'Female'), ('Other', 'Other')]
 races = [("American Indian or Alaska Native", "American Indian or Alaska Native"),
          ("Asian", "Asian"),
@@ -31,6 +35,7 @@ class ApplyForm(models.Model):
     Gender = models.CharField(max_length=20, choices=gender, default='Male')
     race = models.CharField(max_length=200, choices=races, default='Asian')
     veteran_status = models.CharField(max_length=200, choices=veteranStatus, default='veteran')
+    # apply = models.ManyToManyField(apply)
     # date = models.DateTimeField(auto_now_add=True)
 
     # job_id = models.ForeignKey('app.JobPost', null=True, on_delete=models.CASCADE)

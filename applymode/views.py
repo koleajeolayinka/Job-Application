@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from applybank.forms import ApplyForms
+from applymode.forms import ApplyForms
 
 
 # Create your views here.
