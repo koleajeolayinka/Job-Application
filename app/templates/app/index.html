@@ -1,4 +1,76 @@
+{% load static %}
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="{% static 'app/style.css' %}"/>
+    <link
+            href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+            rel="stylesheet"
+    />
+    <title>Job listing</title>
+</head>
+<body>
+<header>
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <img src="{% static 'app/logo.svg' %}" alt=""/>
+            </div>
+            <div class="links">
+                <a href="{% url 'jobs_home' %}" onclick="menu()">Home</a>
+            </div>
+            <span class="material-icons menu" onclick="menu()"> menu </span>
+        </div>
+    </nav>
+</header>
+
+<!-- job post lists -->
+<section>
+    <div class="container">
+        <!-- job post -->
+        {% for job in job_title %}
+
+            <div class="post">
+                <!-- title and des -->
+                <div class="job-info">
+                    <h1 class="job-title">{{ job.title }}</h1>
+                    <div class="job-des">
+                        <div class="location item">
+                            <span class="material-icons"> place </span>
+                            <p>{{job.location.state}}</p>
+                        </div>
+                        <div class="budget item">
+                            <span class="material-icons"> attach_money </span>
+                            <p>{{job.salary}}p/m</p>
+                        </div>
+                        <div class="time item">
+                            <span class="material-icons"> schedule </span>
+                            <p>{{job.type}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button class="apply">
+                        <a href="{% url 'jobs_detail' forloop.counter0 %}">View Job</a>
+                    </button>
+                </div>
+            </div>
+        {% endfor %}
+
+        <!-- job post end-->
+
+
+    </div>
+</section>
+<script src="{% static 'app/app.js' %}"></script>
+</body>
+</html>
+
+
+{% comment %} <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -23,4 +95,4 @@
 
 </ul>
 </body>
- </html> 
+ </html>  {% endcomment %}

@@ -62,12 +62,11 @@ def job_detail(request, id):
     # job
 
     try:
-        if id == 0:
-            return redirect(reverse("jobs_home"))
+        # if id == 0:
+        #     return redirect(reverse("jobs_home"))
         context = {
-            "job_title": job[id],
-            "job_descrpt": job[id],
-            "salary": job[id]
+            "job": job[id],
+
         }
         # return_html = f"<h1>{job_title[int(id)]}</h1> <h3>{job_description[int(id)]}</h3> <a href={
         # back}><h1>back</h1></a>"

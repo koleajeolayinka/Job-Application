@@ -1,0 +1,382 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"); */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+:root {
+  --blue: #4d62d8;
+  --lblue: #7281e0;
+  --card: #fdfdfd;
+  --shadow: #64646f17 0px 12px 29px 0px;
+  --nav: #1b2436;
+}
+body {
+  background: #f5f6f5;
+}
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 3px;
+}
+nav {
+  background: var(--nav);
+  padding: 1em 0;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+}
+.logo h1 {
+  color: white;
+}
+.logo {
+  width: 200px;
+}
+img {
+  width: 100%;
+}
+.links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.links a {
+  color: white;
+  margin-left: 30px;
+  font-size: 1rem;
+  font-weight: 400;
+}
+.links .auth {
+  margin-left: 30px;
+  height: 45px;
+  padding: 0 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  background: var(--blue);
+  color: white;
+  box-shadow: var(--shadow);
+}
+/* typo */
+.typo {
+  margin-top: 5em;
+}
+.title {
+  font-size: 2.3rem;
+  font-weight: 600;
+}
+.des {
+  font-size: 1rem;
+}
+
+/* post card */
+
+.post {
+  background: var(--card);
+  border-radius: 8px;
+  padding: 2em;
+  box-shadow: var(--shadow);
+  margin-top: 3em;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 8fr 2fr;
+  border-bottom: 3px solid var(--lblue);
+}
+.menu {
+  display: none !important;
+}
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 20px;
+}
+
+.post:last-child {
+  margin-bottom: 5em;
+}
+.item {
+  display: flex;
+  align-items: center;
+  margin-left: 30px;
+}
+.item:first-child {
+  margin-left: 0;
+}
+.job-des {
+  display: flex;
+  align-items: center;
+}
+
+.item span {
+  margin-right: 10px;
+  font-size: 20px !important;
+  color: gray;
+}
+.item p {
+  font-size: 1rem;
+  font-weight: 600;
+  color: gray;
+}
+.apply {
+  background: var(--blue);
+  height: 45px;
+  padding: 0 40px;
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.view {
+  border: 1px solid var(--blue);
+  background: transparent;
+  color: var(--blue);
+}
+.job-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--blue);
+}
+
+
+.r2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.view-post {
+  width: 80%;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  margin: 5em auto;
+  padding: 2em;
+}
+.desc {
+  max-height: 300px;
+  overflow-y: scroll;
+  margin: 2em 0;
+  padding: 1em;
+}
+.desc::-webkit-scrollbar {
+  width: 3px;
+  background: #80808017;
+}
+.desc::-webkit-scrollbar-thumb {
+  background: #4d62d8;
+}
+.jobtitle {
+  font-size: 1.5rem;
+  color: var(--nav);
+  font-weight: 600;
+  margin-bottom: 0.5em;
+}
+.it {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--lblue);
+}
+.it span {
+  color: #1b2436c0;
+}
+@media (max-width: 991px) {
+  .container {
+    padding: 0 10px;
+  }
+  .post {
+    grid-template-columns: 1fr;
+    padding: 1em;
+  }
+  .job-des {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .item {
+    margin-left: 0;
+  }
+  .apply {
+    margin-top: 1em;
+  }
+  .search {
+    height: 45px;
+  }
+  .links {
+    height: 90vh;
+    width: 100%;
+    position: fixed;
+    top: 10vh;
+    left: 0;
+    background: #000000d7;
+    flex-direction: column;
+    justify-content: space-around;
+    backdrop-filter: blur(15px);
+    transform: translateX(100%);
+    transition: 0.3s;
+  }
+  .active {
+    transform: translateX(0%);
+    transition: 0.3s;
+  }
+  .links a {
+    margin-left: 0;
+  }
+  .auth {
+    margin-left: 0 !important;
+  }
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 10vh;
+  }
+  nav .container {
+    height: 100%;
+  }
+  .menu {
+    font-size: 35px !important;
+    display: block !important;
+  }
+  .logo {
+    width: 150px;
+  }
+  .buttons {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .view-post {
+    width: 100%;
+    padding: 2em 1em;
+    margin-top: 7em;
+  }
+  .jobtitle {
+    font-size: 1.2rem;
+  }
+  .it {
+    font-size: 1rem;
+  }
+}
+
+button{
+  cursor: pointer;
+  }
+
+
+  /* Email code */
+  .subscribe-text{
+  border: none;
+  outline: none;
+  height: 45px;
+  padding: 0 15px;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 400;
+  width: 100%;
+  }
+
+  /* .email-form{
+    grid-template-columns: 1fr;
+    padding: 1em;
+    margin-top: 15vh;
+    display: grid;
+    gap: 2em;
+    background-color: var(--blue);
+    padding: 2em;
+    border-radius: 8px;
+    margin-top: 3em;
+    width: 50%;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%) 
+  } */
+
+  .email-form-title{
+    color: #f5f6f5;
+    font-size: 300%;
+    text-align: center;
+  }
+
+  .email-form-title-success{
+    color: yellow;
+    font-size: 300%;
+    text-align: center;
+    display: none;
+  }
+
+  .help-text{
+    font-size: 10px;
+    color: gray;
+    padding: 0;
+    margin: 0;
+  }
+
+  .email-submit{
+    border: none;
+    outline: none;
+    height: 45px;
+    background: var(--blue);
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    color: white;
+    padding: 0 3em;
+    
+  }
+
+  label {
+    color: var(--lblue);
+    font-weight: 500;
+    padding-bottom: 10px;
+}
+
+input, select {
+border: none;
+outline: none;
+height: 45px;
+border-radius: 3px;
+width: 100%;
+background: #7281e02a;
+padding: 0 20px;
+margin-bottom: 2em;
+}
+
+form {
+  width: 50%;
+  padding: 3em 2em;
+  background: white;
+  border-radius: 10px;
+  margin: 5em auto;
+  box-shadow: var(--shadow);
+}
+
+.errorlist {
+  background: #ff27272a;
+  color: #ff0000;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.thank-you{
+  border: none;
+  outline: none;
+  height: 45px;
+  border-radius: 3px;
+  width: 100%;
+  padding: 0 20px;
+  margin: 2em;
+  font-size: 30px;
+}
