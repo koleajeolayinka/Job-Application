@@ -1,24 +1,71 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
+<head>
+    <meta charset="UTF-8"/>
     <meta
-      name="viewport"
-      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+            name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
     />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" type="text/css" href="{% static  'subscribe/main.css' %}" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <link rel="stylesheet" type="text/css" href="{% static  'app/style.css' %}"/>
     <title>Subscribe</title>
-  </head>
-  <body>
-    <h1><img src="{% static 'subscribe/mail.svg' %}" alt=""/>Subscribe Form</h1>
+</head>
+<body>
+<header>
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <img src="{% static 'app/logo.svg' %}" alt=""/>
+            </div>
+            <div class="links">
+                <a href="{% url 'jobs_home' %}" onclick="menu()">Home</a>
+            </div>
+            <span class="material-icons menu" onclick="menu()"> menu </span>
+        </div>
+    </nav>
+</header>
+<section>
+    <div class="container">
+        <form method="post" class="email-form">
+            {% csrf_token %}
+            {{form.as_div}}
+
+            
+
+            {% comment %} <p>
+                <label for="id_first_name">Enter First Name:</label>
+                <input type="text" name="first_name" maxlength="100" required id="id_first_name">
+            </p>
+            <p>
+                <label for="id_last_name">Enter Last Name:</label>
+                <input type="text" name="last_name" maxlength="100" required id="id_last_name">
+            </p>
+            <p>
+                <label for="id_email">Enter Email:</label>
+                <input type="email" name="email" maxlength="100" required id="id_email">
+            </p>
+            <p>
+                <label for="id_option">Option:</label>
+                <select name="option" id="id_option">
+                    <option value="W">Weekly</option>
+                    <option value="M" selected>Monthly</option>
+                </select>
+            </p> {% endcomment %}
+            <button class="email-submit">Submit</button> 
+    </div>
+{#    </div>#}
+</section>
+<script src="{% static 'app/app.js' %}"></script>
+
+
+{% comment %} <h1><img src="{% static 'subscribe/mail.svg' %}" alt=""/>Subscribe Form</h1>
     <form method="post">
       {% csrf_token %} {{ form.as_div }}
       <input onclick="popup()" type="submit" value="Submit" />
 
-      <script src="{% static 'subscribe/main.js' %}"></script>
-      {% comment %} {% csrf_token %} {% if email_error_empty %}
+      <script src="{% static 'subscribe/main.js' %}"></script> {% endcomment %}
+{% comment %} {% csrf_token %} {% if email_error_empty %}
       <p>{{ email_error_empty }}</p>
       {% endif %}
       <label for="f_name">First Name</label>
@@ -44,6 +91,6 @@
 
       <input type="submit" value="Submit" />
       {% endcomment %}
-    </form>
-  </body>
+</form>
+</body>
 </html>
