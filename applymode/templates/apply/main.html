@@ -1,20 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-    />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Apply Form</title>
-  </head>
-  <body>
-    <form method="Post" enctype='multipart/form-data'>
-        {% csrf_token %}
-        {{ applyForm.as_p}}
-        <button type="submit">Submit</button>
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Apply Form {% endblock title %}
 
-    </form>
-  </body>
-</html>
+{% block content %}
+    {% comment %} <section> {% endcomment %}
+      <div class='container'>
+          <form method="Post" enctype="multipart/form-data">
+        {% csrf_token %}
+         {{ applyForm.as_p}}
+
+        <button class='submit-bar' type="submit">Submit</button>
+      </form>
+    </section>
+  </div>
+
+{% endblock content %}
+

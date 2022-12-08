@@ -16,7 +16,7 @@ races = [("American Indian or Alaska Native", "American Indian or Alaska Native"
          ("Hispanic or Latino", "Hispanic or Latino."),
          ("Native Hawaiian or Other Pacific Islander", "Native Hawaiian or Other Pacific Islander"),
          ("White", "White")]
-veteranStatus = [("veteran", "I a am veteran"), ("~Not a veteran", "I am not a veteran"),
+veteranStatus = [("veteran", "I am a veteran"), ("~Not a veteran", "I am not a veteran"),
                  ("Declined to self-identity", "Declined to self-identity")]
 
 
