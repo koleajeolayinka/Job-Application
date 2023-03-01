@@ -28,9 +28,11 @@
                     </div>
                 </div>
                 <div class="buttons">
+                    <a href="{% url 'jobs_detail' forloop.counter0 %}">
                     <button class="apply">
-                        <a href="{% url 'jobs_detail' forloop.counter0 %}">View Job</a>
+                        View Job
                     </button>
+                </a>
                 </div>
             </div>
         {% endfor %}
